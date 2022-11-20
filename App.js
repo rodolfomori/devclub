@@ -3,6 +3,8 @@ import { WebView } from 'react-native-webview'
 import { StatusBar } from 'react-native'
 import OneSignal from 'react-native-onesignal';
 import Constants from "expo-constants";
+import codePush from "react-native-code-push";
+
 
 const App = () => {
   OneSignal.setAppId(Constants.manifest.extra.oneSignalAppId);
@@ -30,10 +32,12 @@ OneSignal.setNotificationOpenedHandler(notification => {
     <StatusBar barStyle="dark-content" backgroundColor="transparent"/>
       <WebView
         source={{ uri: 'https://app.devclub.com.br/' }}
-        style={{ marginTop: 45 }}
+        style={{ marginTop: 0 }}
       />
     </>
   )
 }
 
-export default App
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+
+export default codePush(codePushOptions)(App);
