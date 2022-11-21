@@ -1,16 +1,11 @@
 {
   "expo": {
-    "name": "devclub",
-    "slug": "devclub",
+    "name": "DevClub",
+    "slug": "DevClub",
     "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#000"
-    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -23,12 +18,12 @@
       "buildNumber": "1.0.1"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#000000"
-      },
       "package": "com.devclub",
-      "versionCode": 2
+      "versionCode": 3,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#000000"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

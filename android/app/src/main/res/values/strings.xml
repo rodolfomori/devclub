@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">devclub</string>
+  <string name="app_name">DevClub</string>
   <string moduleConfig="true" name="CodePushDeploymentKey">gUAy1fKISXIaUUDnxsJGOkMeVYqbt19FjMFP0</string>
   <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
   <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
