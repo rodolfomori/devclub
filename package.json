@@ -1,29 +1,42 @@
 {
   "name": "DevClub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'"
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
+    "lint": "eslint *.js **/*.js src/**/*.js"
   },
   "dependencies": {
+    "@react-native-community/cli": "^9.3.2",
     "expo": "~46.0.17",
+    "expo-constants": "^14.0.2",
     "expo-splash-screen": "~0.16.2",
-    "expo-status-bar": "^1.4.2",
     "expo-updates": "~0.14.7",
     "onesignal-expo-plugin": "^1.2.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
     "react-native-code-push": "^7.0.5",
+    "react-native-loading-spinner-overlay": "^3.0.1",
     "react-native-onesignal": "^4.4.1",
     "react-native-web": "~0.18.7",
-    "react-native-webview": "^11.23.1"
+    "react-native-webview": "^11.23.1",
+    "styled-components": "^5.3.6",
+    "expo-status-bar": "~1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^4.0.0"
   },
   "private": true
 }
