@@ -14,12 +14,25 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "devclub.app",
+      "bundleIdentifier": "devclub.app.app",
       "buildNumber": "1.2.5"
     },
     "android": {
-      "package": "com.devclub",
-      "versionCode": 5,
+      "package": "com.devclub.app.app",
+      "versionCode": 7,
+      "blockedPermissions": [
+        "ACCESS_BACKGROUND_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "permissions": [
+        "CAMERA",
+        "MEDIA_LIBRARY",
+        "CAMERA_ROLL",
+        "NOTIFICATIONS",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#000000"

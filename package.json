@@ -1,5 +1,5 @@
 {
-  "name": "DevClub",
+  "name": "devclub",
   "version": "1.0.2",
   "scripts": {
     "start": "expo start --dev-client",
@@ -10,9 +10,7 @@
     "lint": "eslint *.js **/*.js src/**/*.js"
   },
   "dependencies": {
-    "@react-native-community/cli": "^9.3.2",
     "expo": "~46.0.17",
-    "expo-constants": "^14.0.2",
     "expo-splash-screen": "~0.16.2",
     "expo-updates": "~0.14.7",
     "onesignal-expo-plugin": "^1.2.0",
@@ -24,8 +22,7 @@
     "react-native-onesignal": "^4.4.1",
     "react-native-web": "~0.18.7",
     "react-native-webview": "^11.23.1",
-    "styled-components": "^5.3.6",
-    "expo-status-bar": "~1.4.0"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

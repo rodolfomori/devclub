@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import OneSignal from 'react-native-onesignal';
 import Constants from 'expo-constants';
 import codePush from 'react-native-code-push';
-import { Keyboard, StatusBar } from 'react-native';
+import { Keyboard, StatusBar, Platform } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { BottomMenu, TopMenu } from '../../components';
 import { useHome } from '../../hooks/HomeContext';
@@ -18,6 +18,8 @@ function App() {
   useEffect(() => {
     checkUpdates();
   }, []);
+
+  const isAndroid = Platform.OS === 'android';
 
   const {
     iFrame, setLoading, loading, iFrameKey
@@ -79,7 +81,8 @@ function App() {
 
   return (
     <Container backgroundColor={iFrame}>
-      <StatusBar barStyle="light-content" translucent />
+      <TopMenu goBack={goback} />
+      <StatusBar barStyle={isAndroid ? 'dark-content' : 'light-content'} translucent />
       {iFrame === 0 && (
         <WebViewComponent
           ref={webViewRef}
@@ -89,7 +92,7 @@ function App() {
           key={iFrameKey}
           onLoad={() => setLoading(false)}
           source={{ uri: 'https://plataforma.devclub.com.br/' }}
-          style={{ backgroundColor: '#121212', marginTop: 20 }}
+          style={{ backgroundColor: '#2B2E33', marginTop: isAndroid ? 25 : 0 }}
         />
       )}
       {iFrame === 1 && (
@@ -101,7 +104,7 @@ function App() {
           key={iFrameKey}
           onLoad={() => setLoading(false)}
           source={{ uri: 'https://comunidade.devclub.com.br/' }}
-          style={{ backgroundColor: '#2B2E33', marginBottom: 50, marginTop: 25 }}
+          style={{ backgroundColor: '#2B2E33', marginBottom: 70, marginTop: isAndroid ? 25 : 0 }}
         />
       )}
       {iFrame === 2 && (
@@ -113,7 +116,7 @@ function App() {
           key={iFrameKey}
           onLoad={() => setLoading(false)}
           source={{ uri: 'https://loja.devclub.com.br/' }}
-          style={{ backgroundColor: '#2B2E33', marginBottom: 50, marginTop: 20 }}
+          style={{ backgroundColor: '#2B2E33', marginBottom: 80, marginTop: isAndroid ? 25 : 0 }}
         />
       )}
       {iFrame === 3 && (
@@ -128,10 +131,9 @@ function App() {
             uri:
               'https://www.youtube.com/playlist?list=PLsFVybaG4mOAa9gF5q7dJfJigxAyN0SyJ',
           }}
-          style={{ backgroundColor: '#2B2E33', marginBottom: 50, marginTop: 30 }}
+          style={{ backgroundColor: '#fff', marginBottom: 80, marginTop: isAndroid ? 25 : 0 }}
         />
       )}
-      <TopMenu goBack={goback} />
       {!isKeyboardVisible && !loading && <BottomMenu />}
       <Spinner visible={loading} animation="slide" overlayColor="#000000" />
     </Container>
