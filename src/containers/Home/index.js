@@ -83,7 +83,21 @@ function App() {
     <Container backgroundColor={iFrame}>
       <TopMenu goBack={goback} />
       <StatusBar barStyle={isAndroid ? 'dark-content' : 'light-content'} translucent />
+
       {iFrame === 0 && (
+        <WebViewComponent
+          ref={webViewRef}
+          scalesPageToFit={false}
+          injectedJavaScript={INJECTEDJAVASCRIPT}
+          scrollEnabled
+          key={iFrameKey}
+          onLoad={() => setLoading(false)}
+          source={{ uri: 'https://app.devclub.com.br' }}
+          style={{ backgroundColor: '#2B2E33', marginTop: isAndroid ? 25 : 0 }}
+        />
+      )}
+
+      {iFrame === 1 && (
         <WebViewComponent
           ref={webViewRef}
           scalesPageToFit={false}
@@ -95,7 +109,7 @@ function App() {
           style={{ backgroundColor: '#2B2E33', marginTop: isAndroid ? 25 : 0 }}
         />
       )}
-      {iFrame === 1 && (
+      {iFrame === 2 && (
         <WebViewComponent
           ref={webViewRef}
           scalesPageToFit={false}
@@ -107,7 +121,7 @@ function App() {
           style={{ backgroundColor: '#2B2E33', marginBottom: 70, marginTop: isAndroid ? 25 : 0 }}
         />
       )}
-      {iFrame === 2 && (
+      {iFrame === 3 && (
         <WebViewComponent
           ref={webViewRef}
           scalesPageToFit={false}
@@ -119,7 +133,7 @@ function App() {
           style={{ backgroundColor: '#2B2E33', marginBottom: 80, marginTop: isAndroid ? 25 : 0 }}
         />
       )}
-      {iFrame === 3 && (
+      {iFrame === 4 && (
         <WebViewComponent
           ref={webViewRef}
           scalesPageToFit={false}

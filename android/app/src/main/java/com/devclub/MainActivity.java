@@ -1,4 +1,4 @@
-package com.devclub.app.app;
+package com.devclub;
 
 import android.os.Build;
 import android.os.Bundle;

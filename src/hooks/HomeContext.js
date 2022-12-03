@@ -10,10 +10,14 @@ export function HomeProvider({ children }) {
   const [loading, setLoading] = useState(false);
 
   const changeIframe = useCallback((iframe) => {
+    if (iframe === iFrame) {
+      setIFrameKey(iFrameKey + 1);
+    } else {
+      setIframe(iframe);
+    }
     setLoading(true);
-    setIframe(iframe);
-    setIFrameKey(iFrameKey + 1);
-  }, [iFrameKey]);
+
+  }, [iFrame, iFrameKey]);
 
   const value = useMemo(() => ({
     setIframe,

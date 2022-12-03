@@ -14,12 +14,12 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "devclub.app.app",
+      "bundleIdentifier": "com.devclub",
       "buildNumber": "1.2.5"
     },
     "android": {
-      "package": "com.devclub.app.app",
-      "versionCode": 7,
+      "package": "com.devclub",
+      "versionCode": 8,
       "blockedPermissions": [
         "ACCESS_BACKGROUND_LOCATION",
         "ACCESS_COARSE_LOCATION",
